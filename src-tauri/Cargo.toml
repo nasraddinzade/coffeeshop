@@ -4,7 +4,7 @@ version = "2.0.0"
 description = "Offline-first coffee shop POS"
 authors = ["Ramin Nasraddinzade"]
 license = "MIT"
-repository = "https://github.com/nasraddinzade/coffeshop"
+repository = "https://github.com/nasraddinzade/coffeeshop"
 edition = "2021"
 rust-version = "1.77.2"
 
