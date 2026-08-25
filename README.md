@@ -36,6 +36,11 @@ discount applies after the surcharge.
   [Tauri 2 guide](https://v2.tauri.app/start/prerequisites/) — WebView2 on Windows,
   Xcode command line tools on macOS, `webkit2gtk` and friends on Linux
 
+On Windows the Rust host must be **MSVC** (`stable-x86_64-pc-windows-msvc`, which needs the
+Visual Studio Build Tools "Desktop development with C++" workload). The GNU/MinGW host is
+not usable: the crates compile and the bundler even produces working installers, but the
+application window is never created — Tauri's Windows backend assumes the MSVC toolchain.
+
 ## Getting started
 
 ```bash

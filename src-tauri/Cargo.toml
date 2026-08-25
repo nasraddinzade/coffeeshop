@@ -10,7 +10,10 @@ rust-version = "1.77.2"
 
 [lib]
 name = "coffeeshop_lib"
-crate-type = ["staticlib", "cdylib", "rlib"]
+# Desktop only. The mobile targets would also need "staticlib" and "cdylib";
+# a cdylib exports every symbol, which the MinGW linker cannot handle
+# ("export ordinal too large"). Add them back if the app ever ships on mobile.
+crate-type = ["rlib"]
 
 [build-dependencies]
 tauri-build = { version = "2", features = [] }
