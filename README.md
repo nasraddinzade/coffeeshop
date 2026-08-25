@@ -2,6 +2,9 @@
 
 Offline-first point of sale for a coffee shop — **React + TypeScript + Tauri 2**.
 
+Live demo: [coffeeshop-bagban.vercel.app](https://coffeeshop-bagban.vercel.app) — browser
+build (data in localStorage, no Rust backend). Log in as `admin` / `admin123`.
+
 Everything runs locally: orders, the product catalogue, ingredient stock, finances and
 reports. There is no server, no account and no network call; the dataset is a single
 JSON document in the operating system's application-data folder.
