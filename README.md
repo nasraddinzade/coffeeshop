@@ -9,8 +9,8 @@ Everything runs locally: orders, the product catalogue, ingredient stock, financ
 reports. There is no server, no account and no network call; the dataset is a single
 JSON document in the operating system's application-data folder.
 
-This is a full rewrite of an earlier Electron build. It keeps the same workflow and the
-same data model, and it can import the old app's JSON and Excel exports directly.
+Data from earlier versions of the app carries over: their JSON and Excel exports can be
+imported directly.
 
 ## Features
 
@@ -90,7 +90,7 @@ written to a temporary file and renamed — so a crash mid-save cannot corrupt i
 snapshot is taken automatically before every import, restore and "Clear all data", and
 the 30 most recent snapshots are kept.
 
-## Migrating from the Electron version
+## Migrating from an earlier version
 
 1. In the old app: **Backups → Export Data**, choose either JSON or Excel.
 2. In this app: **Backups → Import Data**, pick the file, then choose a strategy:
@@ -122,6 +122,12 @@ The Rust side exposes a small command surface (`load_database`, `save_database`,
 The webview runs without a custom Content-Security-Policy, matching the Tauri starter
 template; the app loads no remote content, but if you fork it for something that does,
 set `app.security.csp` in `src-tauri/tauri.conf.json`.
+
+## Repository history
+
+The app was built locally, without version control, and published here once it was
+finished. That is why the history starts with an import of the completed project rather
+than tracking the work commit by commit.
 
 ## Licence
 

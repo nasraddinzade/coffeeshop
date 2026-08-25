@@ -7,7 +7,7 @@
  * Two formats are supported:
  *  - `.xlsx` — one sheet per entity, meant for humans;
  *  - `.json` — a faithful dump, meant for backups and migration. Exports
- *    produced by the older Electron build are recognised as well.
+ *    produced by earlier versions of the app are recognised as well.
  */
 
 import type { Workbook } from 'exceljs';
@@ -332,7 +332,7 @@ export interface ImportPayload {
 export function parseJsonPayload(raw: unknown): ImportPayload {
   if (!raw || typeof raw !== 'object') throw new Error('Unsupported JSON structure');
 
-  // Full export (both the current and the old Electron format).
+  // Full export, in both the current and the legacy shape.
   const wrapper = raw as { data?: unknown; type?: string };
   if (wrapper.data && typeof wrapper.data === 'object' && !Array.isArray(wrapper.data)) {
     return wrapper.data as ImportPayload;

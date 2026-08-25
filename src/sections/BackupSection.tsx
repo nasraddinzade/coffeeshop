@@ -153,7 +153,7 @@ export function BackupSection() {
                 <Upload size={28} />
               </div>
               <h4>Import Data</h4>
-              <p>Load an .xlsx or .json file, including exports from the old Electron app</p>
+              <p>Load an .xlsx or .json file, including exports from earlier versions</p>
             </div>
 
             <div

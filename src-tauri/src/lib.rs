@@ -152,7 +152,7 @@ fn delete_backup(app: AppHandle, name: String) -> Result<(), String> {
     fs::remove_file(backup_dir(&app)?.join(name)).map_err(|e| format!("cannot delete backup: {e}"))
 }
 
-/// SHA-256, hex encoded — same scheme the Electron build used, so exported
+/// SHA-256, hex encoded — the same scheme earlier versions used, so exported
 /// user records stay compatible.
 #[tauri::command]
 fn hash_password(password: String) -> String {
